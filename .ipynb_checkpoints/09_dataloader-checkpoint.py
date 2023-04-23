@@ -61,11 +61,12 @@ print(features, labels)
 # !!! IF YOU GET AN ERROR DURING LOADING, SET num_workers TO 0 !!!
 train_loader = DataLoader(dataset=dataset,
                           batch_size=4,
-                          shuffle=True)
+                          shuffle=True,
+                          num_workers=2)
 
 # convert to an iterator and look at one random sample
-dataiter = iter(train_loader)    
-data = next(dataiter)  # this function gives you the next item in the iterable. If you run it again youll get the next item
+dataiter = iter(train_loader)
+data = next(dataiter)
 features, labels = data
 print(features, labels)
 
